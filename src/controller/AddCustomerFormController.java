@@ -38,9 +38,7 @@ public class AddCustomerFormController {
         String SQL = "INSERT INTO customer VALUES(?,?,?,?)";
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/thogakade", "root", "root");
-//            Statement statement = connection.createStatement();
+            Connection connection = db.DBConnection.getInstance().getConnetion();
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
             preparedStatement.setObject(1, id);
             preparedStatement.setObject(2, name);
