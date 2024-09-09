@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="365.0" prefWidth="391.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SearchCustomerFormController">
+   <children>
+      <Label layoutX="139.0" layoutY="15.0" prefHeight="18.0" prefWidth="171.0" text="Search Customer Form">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="41.0" layoutY="118.0" prefHeight="17.0" prefWidth="17.0" text="ID" />
+      <Label layoutX="41.0" layoutY="153.0" prefHeight="17.0" prefWidth="40.0" text="Name" />
+      <Label layoutX="41.0" layoutY="187.0" prefHeight="17.0" prefWidth="52.0" text="Address" />
+      <Label layoutX="41.0" layoutY="221.0" prefHeight="17.0" prefWidth="40.0" text="Salary" />
+      <TextField fx:id="txtID" layoutX="134.0" layoutY="114.0" prefHeight="25.0" prefWidth="198.0" />
+      <TextField fx:id="txtName" layoutX="134.0" layoutY="149.0" prefHeight="25.0" prefWidth="198.0" />
+      <TextField fx:id="txtAddrss" layoutX="134.0" layoutY="183.0" prefHeight="25.0" prefWidth="198.0" />
+      <TextField fx:id="txtSalary" layoutX="134.0" layoutY="217.0" prefHeight="25.0" prefWidth="198.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="41.0" opacity="0.47" stroke="BLACK" strokeType="INSIDE" width="391.0" />
+      <Button layoutX="280.0" layoutY="276.0" mnemonicParsing="false" onAction="#btnSearchOnAction" prefHeight="25.0" prefWidth="52.0" text="Search" />
+      <Button layoutX="213.0" layoutY="276.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="25.0" prefWidth="59.0" text="Clear" />
+   </children>
+</AnchorPane>

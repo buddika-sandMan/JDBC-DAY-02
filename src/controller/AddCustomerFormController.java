@@ -3,6 +3,7 @@ package controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import model.Customer;
 
 import java.sql.*;
 
@@ -28,10 +29,17 @@ public class AddCustomerFormController {
     @FXML
     void btnSaveOnAction(ActionEvent event) {
 
-        String id = txtID.getText();
-        String name = txtName.getText();
-        String address = txtAddrss.getText();
-        Double salary = Double.parseDouble(txtSalary.getText());
+        Customer customer = new Customer(
+                txtID.getText(),
+                txtName.getText(),
+                txtAddrss.getText(),
+                Double.parseDouble(txtSalary.getText())
+        );
+
+//        String id = txtID.getText();
+//        String name = txtName.getText();
+//        String address = txtAddrss.getText();
+//        Double salary = Double.parseDouble(txtSalary.getText());
 
 //        String SQL = "INSERT INTO customer VALUES('"+id+"','"+name+"','"+address+"',"+salary+")";
         //prepared statement
@@ -40,10 +48,10 @@ public class AddCustomerFormController {
         try {
             Connection connection = db.DBConnection.getInstance().getConnetion();
             PreparedStatement preparedStatement = connection.prepareStatement(SQL);
-            preparedStatement.setObject(1, id);
-            preparedStatement.setObject(2, name);
-            preparedStatement.setObject(3, address);
-            preparedStatement.setObject(4, salary);
+            preparedStatement.setObject(1, customer.getId());
+            preparedStatement.setObject(2, customer.getName());
+            preparedStatement.setObject(3, customer.getAddress());
+            preparedStatement.setObject(4, customer.getSalary());
             int res = preparedStatement.executeUpdate();
             if(res>0) {
                 System.out.println("Saved");
