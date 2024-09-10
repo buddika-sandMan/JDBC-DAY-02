@@ -1,5 +1,6 @@
 package controller;
 
+import db.DBConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -107,5 +108,20 @@ public class AddCustomerFormController {
         }
         connection.close();
         return false;
+    }
+
+    public void btnDeleteOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+        boolean isDeleted = deleteCustomer(txtID.getText());
+
+        if(isDeleted){
+            System.out.println("deleted");
+        } else {
+            System.out.println("not deleted.");
+        }
+    }
+
+    public static boolean deleteCustomer(String id) throws SQLException, ClassNotFoundException {
+        return DBConnection.getInstance().getConnetion()
+                .createStatement().executeUpdate("DELETE FROM customer WHERE id='"+id+"'") > 0;
     }
 }
