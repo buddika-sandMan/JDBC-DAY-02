@@ -7,7 +7,6 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="365.0" prefWidth="391.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddCustomerFormController">
    <children>
       <Label layoutX="139.0" layoutY="15.0" prefHeight="17.0" prefWidth="114.0" text="Add Customer Form">
@@ -25,6 +24,7 @@
       <TextField fx:id="txtSalary" layoutX="134.0" layoutY="217.0" prefHeight="25.0" prefWidth="198.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="41.0" opacity="0.47" stroke="BLACK" strokeType="INSIDE" width="391.0" />
       <Button layoutX="280.0" layoutY="276.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="25.0" prefWidth="52.0" text="Save" />
-      <Button layoutX="213.0" layoutY="276.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="25.0" prefWidth="59.0" text="Clear" />
+      <Button layoutX="147.0" layoutY="276.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="25.0" prefWidth="59.0" text="Clear" />
+      <Button layoutX="215.0" layoutY="276.0" mnemonicParsing="false" onAction="#btnSearchOnAction" prefHeight="25.0" prefWidth="59.0" text="Search" />
    </children>
 </AnchorPane>

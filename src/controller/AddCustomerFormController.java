@@ -2,9 +2,13 @@ package controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import model.Customer;
 
+import java.io.IOException;
 import java.sql.*;
 
 public class AddCustomerFormController {
@@ -20,6 +24,8 @@ public class AddCustomerFormController {
 
     @FXML
     private TextField txtSalary;
+
+    Stage stage = new Stage();
 
     @FXML
     void btnClearOnAction(ActionEvent event) {
@@ -65,4 +71,13 @@ public class AddCustomerFormController {
 
     }
 
+    @FXML
+    public void btnSearchOnAction(ActionEvent actionEvent) {
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/search_customer_form.fxml"))));
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

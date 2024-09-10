@@ -15,6 +15,10 @@ public class Customer {
     private String address;
     private Double salary;
 
+    public Customer(String id) {
+        this.id = id;
+    }
+
     public String getId() {
         return id;
     }
