@@ -23,8 +23,9 @@
       <TextField fx:id="txtAddrss" layoutX="134.0" layoutY="183.0" prefHeight="25.0" prefWidth="198.0" />
       <TextField fx:id="txtSalary" layoutX="134.0" layoutY="217.0" prefHeight="25.0" prefWidth="198.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="41.0" opacity="0.47" stroke="BLACK" strokeType="INSIDE" width="391.0" />
-      <Button layoutX="280.0" layoutY="276.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="25.0" prefWidth="52.0" text="Save" />
-      <Button layoutX="147.0" layoutY="276.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="25.0" prefWidth="59.0" text="Clear" />
-      <Button layoutX="215.0" layoutY="276.0" mnemonicParsing="false" onAction="#btnSearchOnAction" prefHeight="25.0" prefWidth="59.0" text="Search" />
+      <Button layoutX="287.0" layoutY="278.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="25.0" prefWidth="75.0" text="Save" />
+      <Button layoutX="116.0" layoutY="278.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="25.0" prefWidth="75.0" text="Update" />
+      <Button layoutX="202.0" layoutY="278.0" mnemonicParsing="false" onAction="#btnSearchOnAction" prefHeight="25.0" prefWidth="75.0" text="Search" />
+      <Button layoutX="31.0" layoutY="278.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="25.0" prefWidth="75.0" text="Clear" />
    </children>
 </AnchorPane>

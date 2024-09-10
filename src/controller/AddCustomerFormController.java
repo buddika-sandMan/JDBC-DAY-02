@@ -80,4 +80,32 @@ public class AddCustomerFormController {
             throw new RuntimeException(e);
         }
     }
+
+    public void btnUpdateOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+        Customer customer = new Customer(txtID.getText(), txtName.getText(), txtAddrss.getText(), Double.parseDouble(txtSalary.getText()));
+        boolean isUpdate = updateCustomer(customer);
+
+        if(isUpdate){
+            System.out.println("updated");
+        } else {
+            System.out.println("not updated.");
+        }
+
+    }
+
+    public static boolean updateCustomer(Customer customer) throws SQLException, ClassNotFoundException {
+        Connection connection = db.DBConnection.getInstance().getConnetion();
+        String SQL = "UPDATE customer set name=?, address=?, salary=? WHERE id=?";
+        PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+        preparedStatement.setObject(1, customer.getName());
+        preparedStatement.setObject(2, customer.getAddress());
+        preparedStatement.setObject(3, customer.getSalary());
+        preparedStatement.setObject(4, customer.getId());
+        int res = preparedStatement.executeUpdate();
+        if(res>0) {
+            return true;
+        }
+        connection.close();
+        return false;
+    }
 }
